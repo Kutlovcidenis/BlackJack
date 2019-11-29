@@ -8,8 +8,15 @@
               String answer = in.nextLine();
 
                       if (answer.equals("j")){
-                      System.out.println("Welcome, lets get started");  
-                      PullTwoCards.pullCards();
+                      System.out.println("");
+                      System.out.println("Welcome, lets get started");
+                      System.out.println("");  
+                     
+                      int tmp = PullTwoCards.pullCards();
+                      PullTwoCards.dealerCards();
+                      PullTwoCards.weiterSpielen(tmp);
+
+                    
                       }else{
                       System.out.println("Bye, have a nice day");
 }}}
