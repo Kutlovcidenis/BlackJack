@@ -1,41 +1,110 @@
 import java.util.*;  
 public class PullTwoCards {
-  public static int pullCards() {
-    int zufallszahl1;
-    zufallszahl1 = NeueKarte.gebeEineKarte();
 
-    int zufallszahl2;
-    zufallszahl2 = NeueKarte.gebeEineKarte();
+private int spielerZz1;
+private int spielerZz2;
+private int dealerZz1;
+private int dealerZz2;
+private int playerSum;
+private int dealerSum;
+private int playerTotal;
+private int dealerTotal;
 
-    int playerSum = (zufallszahl2 + zufallszahl1);
+public PullTwoCards (int spielerZz1, int spielerZz2, int dealerZz1, int dealerZz2, int playerSum, int dealerSum, int playerTotal, int dealerTotal){
 
-    System.out.println( "Your 1st card is: " + zufallszahl1 );
-    System.out.println( "Your 2nd card is: " + zufallszahl2 );
-    System.out.println( "Your total is " + playerSum);
+this.spielerZz1 = spielerZz1;
+this.spielerZz2 = spielerZz2;
+this.dealerZz1 = dealerZz1;
+this.dealerZz2 = dealerZz2;
+this.playerSum = playerSum;
+this.dealerSum = dealerSum;
+this.playerTotal = playerTotal;
+this.dealerTotal = dealerTotal;
+}
+
+public int getSpielerZz1() {
+    return spielerZz1;
+  }
+  public void setSpielerZz1(int spielerZz1) {
+    this.spielerZz1 = spielerZz1;
+  }
+  public int getSpielerZz2() {
+    return spielerZz2;
+  }
+  public void setSpielerZz2(int spielerZz2) {
+    this.spielerZz2 = spielerZz2;
+  }
+  public int getDealerZz1() {
+    return dealerZz1;
+  }
+  public void setDealerZz1(int dealerZz1) {
+    this.dealerZz1 = dealerZz1;
+  }
+  public int getDealerZz2() {
+    return dealerZz2;
+  }
+  public void setDealerZz2(int dealerZz2) {
+    this.dealerZz2 = dealerZz2;
+  }
+  public int getPlayerSum() {
+    return playerSum;
+  }
+  public void setPlayerSum(int playerSum) {
+    this.playerSum = playerSum;
+  }
+  public int getDealerSum() {
+    return dealerSum;
+  }
+  public void setDealerSum(int dealerSum) {
+    this.dealerSum = dealerSum;
+  }
+ public int getDealerTotal() {
+    return dealerTotal;
+  }
+  public void setDealerTotal(int dealerTotal) {
+    this.dealerTotal = dealerTotal;
+  }
+   public int getPlayerTotal() {
+    return playerTotal;
+  }
+  public void setPlayerTotal(int playerTotal) {
+    this.playerTotal = playerTotal;
+  }
+
+
+  public int pullCards() {
+   
+    this.spielerZz1 = NeueKarte.gebeEineKarte();
+
+    
+    this.spielerZz2 = NeueKarte.gebeEineKarte();
+
+    this.playerSum = (this.spielerZz1 + this.spielerZz2);
+
+    System.out.println( "Your 1st card is: " + this.spielerZz1 );
+    System.out.println( "Your 2nd card is: " + this.spielerZz2 );
+    System.out.println( "Your total is " + this.playerSum);
     System.out.println("");
     return playerSum;
   }
 
 
-  public static int dealerCards() {
-    int zufallszahl1;
-    zufallszahl1 = NeueKarte.gebeEineKarte();
+  public int dealerCards() {
+  
+    this.dealerZz1 = NeueKarte.gebeEineKarte();
 
-    int zufallszahl2;
-    zufallszahl2 = NeueKarte.gebeEineKarte();
+    this.dealerZz2 = NeueKarte.gebeEineKarte();
 
-    int dealerSum = (zufallszahl2 + zufallszahl1);
-    System.out.println( "Dealers 1st card is: " + zufallszahl1 );
+    int dealerSum = (this.dealerZz1 + this.dealerZz2);
+    System.out.println( "Dealers 1st card is: " + this.dealerZz1 );
     System.out.println( "Dealers 2nd card is: ?");
     return dealerSum;
   }
 
-  public static void weiterSpielen (int tmp){ 
-
-    int playerTotal=tmp;
+  public void weiterSpielen (){ 
 
 
-    if(tmp > 0){
+    if(this.playerTotal > 0){
       do{
         Scanner in = new Scanner(System.in);  
         System.out.print("Would you like a card? (j/n) "); 

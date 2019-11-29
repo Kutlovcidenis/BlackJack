@@ -12,10 +12,10 @@
                       System.out.println("Welcome, lets get started");
                       System.out.println("");  
                      
-                      int tmp = PullTwoCards.pullCards();
-                      PullTwoCards.dealerCards();
-                      PullTwoCards.weiterSpielen(tmp);
-
+                      PullTwoCards pull = new PullTwoCards(1,1,1,1,1,1,1,1);
+                      pull.pullCards();
+                      pull.dealerCards();
+                      pull.weiterSpielen();
                     
                       }else{
                       System.out.println("Bye, have a nice day");
